@@ -1,0 +1,43 @@
+<h1 mat-dialog-title>Register Yourself to the Events!</h1>
+<div mat-dialog-content>
+  <form [formGroup]="registrationForm">
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input formControlName="firstName" matInput />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input formControlName="lastName" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>College Name</mat-label>
+      <input formControlName="collegeName" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>City</mat-label>
+      <input formControlName="city" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>State</mat-label>
+      <input  formControlName="state" matInput>
+    </mat-form-field>
+    <section class="example-section">
+      <h4>Select your Events</h4>
+      <mat-checkbox formControlName="dance">Dance</mat-checkbox> &nbsp;
+      <mat-checkbox formControlName="music">Music</mat-checkbox> &nbsp;
+      <mat-checkbox formControlName="drawing">Drawing</mat-checkbox> &nbsp;
+      <mat-checkbox formControlName="esports">E-sports</mat-checkbox> &nbsp;
+    </section>
+
+    <section class="example-section" [formGroup]="registrationForm">
+      <h4>You chose:</h4>
+      {{registrationForm.value | json}}
+    </section>
+  </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addProduct()">Save</button>
+</div>
+
+
